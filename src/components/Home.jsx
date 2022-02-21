@@ -15,9 +15,9 @@ export const Home = () => {
         <input
           onKeyPress={function handleInput(event) {
             if (event.key === "Enter") {
-              <Link to={`/search?q=${event.target.value}`}></Link>;
-              // window.open(`/search?q=${event.target.value}`);
-              // <Redirect to={`/search?q=${event.target.value}`} />;
+              // <Link to={`/search?q=${event.target.value}`}></Link>;
+              window.open(`/search?q=${event.target.value}`);
+              // <Redirect to=`/search?q=${event.target.value}`/>;
             }
           }}
           type="search"
@@ -26,6 +26,7 @@ export const Home = () => {
           placeholder="Search google"
           className="search-box"
         />
+        <input type="submit" value="submit" style={{ visibility: "hidden" }} />
       </div>
     </div>
   );
