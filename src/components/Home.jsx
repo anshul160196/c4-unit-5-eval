@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 export const Home = () => {
   const [text, setText] = useState("");
@@ -13,7 +15,9 @@ export const Home = () => {
         <input
           onKeyPress={function handleInput(event) {
             if (event.key === "Enter") {
-              window.open(`/search?q=${event.target.value}`);
+              <Link to={`/search?q=${event.target.value}`}></Link>;
+              // window.open(`/search?q=${event.target.value}`);
+              // <Redirect to={`/search?q=${event.target.value}`} />;
             }
           }}
           type="search"

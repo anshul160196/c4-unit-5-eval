@@ -3,6 +3,7 @@ import "./App.css";
 import { Home } from "./components/Home";
 import { Navbar } from "./components/navbar/Navbar";
 import { Search } from "./components/Search";
+import { SearchDetail } from "./components/SearchDetail";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Home />}></Route>
         <Route path={"/search"} element={<Search />}></Route>
+        <Route patu={"/searchdetail"} element={<searchDetail />}></Route>
       </Routes>
     </div>
   );
