@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Navbar } from "./navbar/Navbar";
 
 export const Search = () => {
@@ -39,9 +39,9 @@ export const Search = () => {
       <div id="search-result">
         {myData.map((element, index) => (
           <div className="result" key={index}>
-            <a>{element.title}</a>
+            <Link to={`/page/${element.id}`}>{element.title}</Link>
             <p>{element.description}</p>
-            <h4>Creation-Date:{element.creation_date}</h4>
+            <h4>Creation-Date:{Date(element.creation_date)}</h4>
             <span>Explicit: {element.explicit ? "Yes" : "No"}</span>
             <span> Explicit: {element.quality}</span>
           </div>
